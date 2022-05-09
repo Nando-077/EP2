@@ -14,7 +14,7 @@ def haversine (r, fi1, y1, fi2, y2):
    
    return d
 
-   def adiciona_em_ordem(np, dist, lista):
+def adiciona_em_ordem(np, dist, lista):
 
     x = [np, dist]
     t = len(lista)
