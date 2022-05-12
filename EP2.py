@@ -2,6 +2,7 @@ print ('nando')
 print ('japa')
 
 from math import*
+from tkinter.filedialog import SaveFileDialog
 
 def haversine (r, fi1, y1, fi2, y2):
 
@@ -42,3 +43,5 @@ def adiciona_em_ordem(np, dist, lista):
                     lx.append(y)
                     i = i+1
     return lx
+
+print ('salve')
