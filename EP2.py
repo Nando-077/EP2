@@ -2,17 +2,19 @@
 from math import*
 from tkinter.filedialog import SaveFileDialog
 import random
+import dados
+d = dados.DADOS
 
-def normaliza(dic1):
+def normaliza(d):
 
     dic2 = {}
 
-    for continente in dic1:
-        for paises in dic1[continente]:
-            dic2[paises] = dic1[continente][paises]
+    for continente in d:
+        for paises in d[continente]:
+            dic2[paises] = d[continente][paises]
             dic2[paises]['continente'] = continente
-            
-    return dic2
+    print (d)       
+    return d
 
 def sorteia_pais(dic1):
     
@@ -86,3 +88,5 @@ def sorteia_letra(palavra,r):
     x = random.choice(lista)
 
     return x
+
+    
