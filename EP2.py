@@ -91,3 +91,8 @@ def normaliza(d):
 
 dicionario = normaliza(DADOS)
 print(dicionario)
+
+#Sortear um país aleatório
+
+lista = list(dicionario.keys())
+x = random.choice(lista)
