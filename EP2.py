@@ -91,4 +91,4 @@ def normaliza(d):
 
 
 dicionario = normaliza(DADOS)
-print(DADOS)
+print(dicionario)
