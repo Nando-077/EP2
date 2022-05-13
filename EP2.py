@@ -2,7 +2,7 @@ from math import*
 from tkinter.filedialog import SaveFileDialog
 import random
 import dados
-d = dados.DADOS
+from dados import DADOS
 EARTH_RADIUS = 6371
 
 def sorteia_pais(dic1):
@@ -88,3 +88,7 @@ def normaliza(d):
             dic2[paises]['continente'] = continente
     print (dic2)       
     return dic2
+
+
+dicionario = normaliza(DADOS)
+print(DADOS)
