@@ -2,7 +2,7 @@ from math import*
 from tkinter.filedialog import SaveFileDialog
 import random
 
-from sklearn.isotonic import check_increasing
+#from sklearn.isotonic import check_increasing
 from dados import DADOS
 EARTH_RADIUS = 6371
 y = []
@@ -117,16 +117,17 @@ Tentativas = 20
 print('Você tem: {} ''tentativas'.format(Tentativas))
 
 #Comprar uma dica ou chutar um país
-haver = haversine(EARTH_RADIUS,dicionario[x]['geo']['latitude'],dicionario[x]['geo']['longitude'],dicionario['chute']['latitude'],dicionario['chute']['longitude'])
+# haver = haversine(EARTH_RADIUS,dicionario[x]['geo']['latitude'],dicionario[x]['geo']['longitude'],dicionario['chute']['latitude'],dicionario['chute']['longitude'])
 
 for i in range(Tentativas):
-    chute = input('Qual é o país?')
-    if chute != x and chute not in y:
+    chute = input('Qual é o país?')  
+    if chute != x and chute not in y and chute!= 'dica':
         Tentativas -= 1
-        y = adiciona_em_ordem(chute,haver,y)
+        # y = adiciona_em_ordem(chute,haver,y)
+        print(f'Voce ainda tem {Tentativas}')
 
     if chute == 'dica':
-        Tentativas -= 1
+        print(f'Voce ainda tem {Tentativas}')
         print('Mercado de Dicas')
         print('----------------------------------------')
         print('1. Cor da bandeira  - custa 4 tentativas')
@@ -137,3 +138,20 @@ for i in range(Tentativas):
         print('0. Sem dica')
         print('----------------------------------------')
         print('Escolha sua opção [0|1|2|3|4|5]: ')
+        qual = int(input('qual dica?'))
+
+        if qual == '1':
+            Tentativas = Tentativas - 4
+            print(f'Voce ainda tem {Tentativas}')
+        if qual == '2':
+            Tentativas = Tentativas - 3
+            print(f'Voce ainda tem {Tentativas}')
+        if qual == '3':
+            Tentativas = Tentativas - 6
+            print(f'Voce ainda tem {Tentativas}')
+        if qual == '4':
+            Tentativas = Tentativas - 5
+            print(f'Voce ainda tem {Tentativas}')
+        if qual == '5':
+            Tentativas = Tentativas - 7
+            print(f'Voce ainda tem {Tentativas}')
