@@ -1,5 +1,3 @@
-print ('nando')
-print ('japa')
 
 from math import*
 from tkinter.filedialog import SaveFileDialog
@@ -43,5 +41,3 @@ def adiciona_em_ordem(np, dist, lista):
                     lx.append(y)
                     i = i+1
     return lx
-
-print ('salve')
