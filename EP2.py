@@ -126,7 +126,6 @@ for i in range(Tentativas):
         y = adiciona_em_ordem(chute,haver,y)
 
     if chute == 'dica':
-        Tentativas -= 1
         print('Mercado de Dicas')
         print('----------------------------------------')
         print('1. Cor da bandeira  - custa 4 tentativas')
@@ -137,3 +136,4 @@ for i in range(Tentativas):
         print('0. Sem dica')
         print('----------------------------------------')
         print('Escolha sua opção [0|1|2|3|4|5]: ')
+        
