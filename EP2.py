@@ -1,8 +1,11 @@
 from math import*
 from tkinter.filedialog import SaveFileDialog
 import random
+
+from sklearn.isotonic import check_increasing
 from dados import DADOS
 EARTH_RADIUS = 6371
+y = []
 
 def sorteia_pais(dic1):
     
@@ -18,9 +21,9 @@ def haversine (r, fi1, y1, fi2, y2):
    x_3 = cos(fi2*(pi/180))
    x_4 = sin(((y2-y1)/2)*(pi/180))**2
 
-   d = 2*r * asin((x_1+x_2*x_3*x_4)**0.5)
+   dist = 2*r * asin((x_1+x_2*x_3*x_4)**0.5)
    
-   return d
+   return dist
 
 def adiciona_em_ordem(np, dist, lista):
 
@@ -91,6 +94,18 @@ def normaliza(d):
 
 dicionario = normaliza(DADOS)
 
+#Interface
+print(' ============================') 
+print('|                            |')
+print('| Bem-vindo ao Insper Países |')
+print('|                            |')
+print('==== Design de Software ====') 
+print('Comandos:')
+print('dica       - entra no mercado de dicas')
+print('desisto    - desiste da rodada')
+print('inventario - exibe sua posição')
+print('Um país foi escolhido, tente adivinhar!')
+
 #Sortear um país aleatório
 
 lista = list(dicionario.keys())
@@ -100,3 +115,25 @@ x = random.choice(lista)
 
 Tentativas = 20
 print('Você tem: {} ''tentativas'.format(Tentativas))
+
+#Comprar uma dica ou chutar um país
+haver = haversine(EARTH_RADIUS,dicionario[x]['geo']['latitude'],dicionario[x]['geo']['longitude'],dicionario['chute']['latitude'],dicionario['chute']['longitude'])
+
+for i in range(Tentativas):
+    chute = input('Qual é o país?')
+    if chute != x and chute not in y:
+        Tentativas -= 1
+        y = adiciona_em_ordem(chute,haver,y)
+
+    if chute == 'dica':
+        Tentativas -= 1
+        print('Mercado de Dicas')
+        print('----------------------------------------')
+        print('1. Cor da bandeira  - custa 4 tentativas')
+        print('2. Letra da capital - custa 3 tentativas')
+        print('3. Área             - custa 6 tentativas')
+        print('4. População        - custa 5 tentativas')
+        print('5. Continente       - custa 7 tentativas')
+        print('0. Sem dica')
+        print('----------------------------------------')
+        print('Escolha sua opção [0|1|2|3|4|5]: ')
