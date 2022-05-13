@@ -90,9 +90,13 @@ def normaliza(d):
 
 
 dicionario = normaliza(DADOS)
-print(dicionario)
 
 #Sortear um país aleatório
 
 lista = list(dicionario.keys())
 x = random.choice(lista)
+
+#Mostrar número de tentativas
+
+Tentativas = 20
+print('Você tem: {} '' ''tentativas'.format(Tentativas))
