@@ -87,5 +87,5 @@ def normaliza(d):
         for paises in d[continente]:
             dic2[paises] = d[continente][paises]
             dic2[paises]['continente'] = continente
-    print (d)       
-    return d
+    print (dic2)       
+    return dic2
