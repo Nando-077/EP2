@@ -1,7 +1,6 @@
 from math import*
 from tkinter.filedialog import SaveFileDialog
 import random
-import dados
 from dados import DADOS
 EARTH_RADIUS = 6371
 
