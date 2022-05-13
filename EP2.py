@@ -41,3 +41,5 @@ def adiciona_em_ordem(np, dist, lista):
                     lx.append(y)
                     i = i+1
     return lx
+
+fdgdgfgsddffffdgfgdgdg
