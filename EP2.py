@@ -1,4 +1,3 @@
-
 from math import*
 from tkinter.filedialog import SaveFileDialog
 import random
