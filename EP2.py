@@ -99,4 +99,4 @@ x = random.choice(lista)
 #Mostrar número de tentativas
 
 Tentativas = 20
-print('Você tem: {} '' ''tentativas'.format(Tentativas))
+print('Você tem: {} ''tentativas'.format(Tentativas))
