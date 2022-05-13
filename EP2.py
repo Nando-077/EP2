@@ -4,17 +4,7 @@ from tkinter.filedialog import SaveFileDialog
 import random
 import dados
 d = dados.DADOS
-
-def normaliza(d):
-
-    dic2 = {}
-
-    for continente in d:
-        for paises in d[continente]:
-            dic2[paises] = d[continente][paises]
-            dic2[paises]['continente'] = continente
-    print (d)       
-    return d
+EARTH_RADIUS = 6371
 
 def sorteia_pais(dic1):
     
@@ -89,4 +79,13 @@ def sorteia_letra(palavra,r):
 
     return x
 
-    
+def normaliza(d):
+
+    dic2 = {}
+
+    for continente in d:
+        for paises in d[continente]:
+            dic2[paises] = d[continente][paises]
+            dic2[paises]['continente'] = continente
+    print (d)       
+    return d
