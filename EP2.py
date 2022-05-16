@@ -157,3 +157,4 @@ for i in range(Tentativas):
         if qual == '5':
             Tentativas = Tentativas - 7
             print(f'Voce ainda tem {Tentativas}')
+            
