@@ -126,6 +126,8 @@ for i in range(Tentativas):
         # y = adiciona_em_ordem(chute,haver,y)
         print(f'Voce ainda tem {Tentativas}')
 
+        
+
     if chute == 'dica':
         print(f'Voce ainda tem {Tentativas}')
         print('Mercado de Dicas')
